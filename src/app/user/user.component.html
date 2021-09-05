@@ -1,0 +1,29 @@
+<h1 class="text-center">User Dashboard</h1>
+<button class="btn btn-danger" routerLink="/adduser">AddUser</button>
+<div class="users" *ngIf="users.length>0; else nouser">
+
+<table class="table">
+    <thead>
+        <tr class="bg-dark text-primary">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Username</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users" class="bg-dark text-white">
+            <td><a [routerLink]="['/parameter',user.id]">{{user.id}}</a></td>
+            <td>{{user.name}}</td>
+            <td>{{user.username}}</td>
+        </tr>
+
+    </tbody>
+</table>
+
+</div>
+<ng-template #nouser>
+    <div class="bg-dark text-danger text-center" style="padding: 40px;">
+        {{errormessage}}
+    </div>
+</ng-template>
+<router-outlet></router-outlet>

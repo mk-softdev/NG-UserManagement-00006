@@ -1,0 +1,31 @@
+<table class="table table-bordered">
+   <tr>
+       <th>Name</th>
+            <td>{{ruser.name}}</td>
+       
+       
+   </tr>
+
+   <tr>
+       <th>Email</th>
+       <td>{{ruser.email}}</td>
+
+   </tr>
+  </table>
+
+  <div>
+
+    <ul class="nav nav-tabs">
+        
+        <li class="nav-item">
+            <a class="nav-link" routerLink="nested1">Nested 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="nested2">Nested 2</a>
+        </li>
+    
+    </ul>
+
+    <router-outlet></router-outlet>
+
+  </div>
